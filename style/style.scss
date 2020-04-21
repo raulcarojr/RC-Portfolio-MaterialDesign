@@ -1,0 +1,428 @@
+/*---------------------
+1. @import
+2. Variables
+3. Screen View
+4. Tablet View
+5. Mobile View
+---------------------*/
+
+/*---- 1. @import ----*/
+@import "reset";
+@import url("https://use.typekit.net/ybd5qwk.css");
+
+/*---- 2. Variables ----*/
+
+// Sets up main font family as a variable
+$main-fam: aktiv-grotesk-extended, sans-serif;
+
+//Sets up font-weights for diffrent web stylings
+//Note: you have to specify if you want the font to be italic or not
+$thin: 200;
+$lite-italic: 300;
+$bold: 800;
+
+//for works page, use normal style
+$chungus: 900;
+
+//2.2 Text Color
+$purplereign: #430d5e;
+$off-white: #d7e0c9;
+$black: #232320;
+
+// 2.3 Measurements
+$sm: 1vmin;
+$m:3vmin; 
+$l: 6vmin;
+$xl: 8vmin;
+
+body {
+    font-family: $main-fam;
+    background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+}
+
+.body-colour {
+    background-color: #d5e0c5;
+    background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  }
+
+img{
+    z-index: -3;
+    position: relative;
+  }
+  
+  
+  .wrapper{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+  
+  //Text Styling
+  
+  //Main Navegation styling
+  .nav-stl{
+    box-shadow: none;
+    
+  
+    h1{
+      font-family: $main-fam;
+      font-weight: $lite-italic;
+      font-style: normal;
+  
+      color: $purplereign;
+  
+    }
+  
+    li{
+      padding: 1em;
+    }
+  
+  }
+  
+  .navbar-nav{
+    font-weight: $bold;
+    li, a, h2{
+      font-family: $main-fam;
+      font-weight: $bold;
+      font-style: italic;
+      color: $purplereign;
+    }
+  }
+
+//Works page styling
+.works-stl{
+    // text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 5em;
+
+
+    //links styling
+    .w-links{
+      text-align: center;
+
+      a, h2{
+      font-family: $main-fam;
+      font-weight: $bold;
+      font-style: italic;
+      color: $purplereign;
+      font-size: 1.2em;
+      }
+
+      hr{
+        width: 0%;
+        text-align: left;
+      }
+
+      i{
+        color: $purplereign;
+      }
+
+    }
+}
+
+//Boxes styling
+.box-stl{
+    font-family: $main-fam;
+    color: $off-white;
+    font-style: bold;
+    text-decoration: none;
+  
+    div{
+      text-align: center; 
+      padding: 4em;
+      background-size: cover;
+    }
+  
+    a{
+      font-weight: 600;
+    }
+  
+    h2 > a {
+      position: relative;
+      color: $off-white;
+      text-decoration: none;
+    }
+  
+    h2 > a:hover {
+      color: $off-white;
+    }
+  
+    h2 > a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $off-white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  
+    h2 > a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  
+  }
+  
+  #section {
+    position: relative;
+  }
+  
+  #background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      transition: all .6s;
+  }
+  
+  #background:hover {
+    opacity: .6;
+    filter: blur(.5px);
+  }
+
+//Shadow for boxes
+.shadow-5 {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                0 2px 2px rgba(0,0,0,0.12), 
+                0 4px 4px rgba(0,0,0,0.12), 
+                0 8px 8px rgba(0,0,0,0.12),
+                0 16px 16px rgba(0,0,0,0.12);
+}
+
+
+//Heading style for Works pages
+.head-works-stl{
+    font-family: $main-fam;
+    font-weight: $bold;
+    font-style: italic;
+    color: $purplereign;
+    font-size: 3em;
+    padding: 1.8em;
+  }
+  
+  .info-head-styl{
+    font-family: $main-fam;
+    font-weight: $bold;
+    font-style: normal;
+    color: $black;
+    font-size: 2.8em;
+  }
+  
+  .info-subhead-styl{
+    font-family: $main-fam;
+    font-weight: 500;
+    font-style: normal;
+    color: $black;
+    font-size: 1.5em;
+  }
+  
+  // "Go back to X page" Styling
+  .back-btn-stl{
+    font-family: $main-fam;
+    font-weight: $bold;
+    font-style: italic;
+    color: $purplereign;
+    font-size: 1em;
+  }
+
+//Hidden Text for works button
+#HiddenText {
+  display: none;
+}
+
+#DivForHoverItem:hover #HiddenText {
+  -webkit-transition: width 2s ease; /* Safari prior 6.1 */
+  transition: width 2s ease;
+  display:block;
+}
+
+
+//Splash "Welcome" animation
+.ml2 {
+    font-family: $main-fam;
+    font-weight: 400;
+    font-size: 3em;
+  }
+  
+  .ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+  
+  .ml2-mobile{
+    font-family: $main-fam;
+    font-weight: 400;
+    font-size: 0em;
+  }
+
+  //Nav Buttons Animation
+  //Credit to https://tobiasahlin.com for the code
+  .hover_ani{
+    h2 > a {
+      position: relative;
+      color: $purplereign;
+      text-decoration: none;
+    }
+  
+    h2 > a:hover {
+      color: $purplereign;
+    }
+  
+    h2 > a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $purplereign;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  
+    h2 > a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+
+//About page styling
+.about-stl{
+    p{
+      font-family: $main-fam;
+      font-weight: $thin;
+      font-style: normal;
+      font-size: 1.2em;
+    }
+  
+    hr{
+      width: 50%;
+    }
+  
+    h1{
+      font-family: $main-fam;
+      font-weight: 800;
+      font-style: normal;
+      color: $black;
+      font-size: 1.5em; 
+      text-align: center;
+      color: $purplereign;
+    }
+
+    ul{
+      list-style-type:disc;
+      font-family: $main-fam;
+      font-weight: $thin;
+      font-style: normal;
+      font-size: 1.2em;
+    }
+
+  }
+
+  //Marketing Projects styling 
+.marketing-stl{
+    img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+  
+    p{
+      font-family: $main-fam;
+      font-weight: 400;
+    }
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+  }
+  
+
+  //Contact Form styling
+
+body { background:rgb(30,30,40); }
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:black;
+  font-family: $main-fam;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid black;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid white; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: $main-fam;
+  width: 100%;
+  background:$purplereign;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:500;
+}
+[type="submit"]:hover { background:black; }
+
+
+.contact-font-styl{
+  font-family: $main-fam;
+}
+
+
+//footer styling
+footer{
+    text-align: center;
+    
+    p{
+      font-family: $main-fam;
+      font-weight: $thin;
+  
+    }
+  
+    a{
+      text-decoration: none;
+      color: $purplereign;
+    }
+  }
+
+
+
+
